@@ -26,7 +26,7 @@ public class JobController {
 		this.jobRepository = jobRepository;
 	} 
 
-	@GetMapping("signup")
+	@GetMapping("addJob")
     public String showSignUpForm(Job job) {
         return "addJob";
     }
@@ -34,7 +34,7 @@ public class JobController {
 	@GetMapping("jobPosts")
 	public String jobPost(Model model) {
 		model.addAttribute("jobs", jobRepository.findAll());
-        return "jobPost";
+        return "jobPosts";
 	}
 
 	@PostMapping("addJob")
@@ -44,7 +44,7 @@ public class JobController {
         }
 
         jobRepository.save(job);
-        return "redirect:list";
+        return "redirect:jobPosts";
     }
 
 }

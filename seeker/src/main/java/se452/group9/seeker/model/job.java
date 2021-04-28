@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import java.util.Date;
 
 
 @Entity
@@ -18,12 +19,11 @@ public class Job {
     private long id;
 
     private String title;
-    @Column(name="description")
+    @Column(name="description", length=2000)
     private String desc;
-    //private Date createdDate;
-    //private Boolean isActive;
+    private String datePosted;
+    private Boolean isActive;
     // private string jobType;
-    // private int postedByID;
     // private int companyID;
     // private jobSkills
 
@@ -60,21 +60,20 @@ public class Job {
     public void setDescription(String description){
         this.desc = description;
     }
+    public String getDatePosted(){
+        return datePosted;
+    }
 
-    // public Date getCreatedDate(){
-    //     return createdDate;
-    // }
+    public void setDatePosted(String datePosted){
+        this.datePosted = datePosted;
+    }
 
-    // public void setCreatedDate(Date createdDate){
-    //     this.createdDate = createdDate;
-    // }
+    public Boolean getIsActive(){
+        return isActive;
+    }
 
-    // public Boolean getIsActive(){
-    //     return isActive;
-    // }
-
-    // public void setIsActive(Boolean isActive){
-    //     this.isActive = isActive;
-    // }
+    public void setIsActive(Boolean isActive){
+        this.isActive = isActive;
+    }
 
 }

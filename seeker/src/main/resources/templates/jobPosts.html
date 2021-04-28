@@ -17,7 +17,7 @@
         <div class="card-body">
             <div th:switch="${jobs}" class="container my-5">
                 <p class="my-5">
-                    <a href="/jobs/signup" class="btn btn-primary"><i
+                    <a href="/jobs/addJob" class="btn btn-primary"><i
                             class="fas fa-user-plus ml-2"> Add Job</i></a>
                 </p>
                 <div class="col-md-10">
@@ -27,13 +27,15 @@
                             <thead>
                             <tr>
                                 <th>Title</th>
-                                <th>Description</th>
+                                <th>Date Posted</th>
+                                <th>Is Active</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr th:each="job : ${jobs}">
                                 <td th:text="${job.title}"></td>
-                                <td th:text="${job.description}"></td>
+                                <td th:text="${job.datePosted}"></td>
+                                <td th:text="${job.isActive}"></td>
                             </tr>
                             </tbody>
                         </table>
